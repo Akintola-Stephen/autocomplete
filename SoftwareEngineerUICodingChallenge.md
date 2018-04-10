@@ -8,6 +8,8 @@ In a `README.md` file in the top level directory of your code submission, be sur
 - a brief overview of your `Coding Exercise` submission e.g. what decisions you made and why, what you would do differently if you had more time, etc.
 - instructions for setting up and running your `Coding Exercise` submission
 
+In your final submission, please do not include your `node_modules` directory.
+
 Please complete each of these challenges to the best of your ability within the next 48 hours. If you need more time please email us to let us know what’s up. If you can’t complete an exercise, do not assume it disqualifies you - submit what you were able to accomplish and your thought process in your README.
 
 ## Javascript
