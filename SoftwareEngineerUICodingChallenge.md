@@ -49,6 +49,8 @@ Describe each phase in 1-2 sentences in your own words.
 
 Create a web front end to the [Reddit API](https://www.reddit.com/dev/api/) with the features listed below. Adhere to best practices for your code submission.
 
+In case of the Reddit API being unavilable please use the api provided by [Pushshift.IO](https://pushshift.io/api-parameters)
+
 ### Features:
 
 ### Topic List
