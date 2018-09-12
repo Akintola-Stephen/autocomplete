@@ -16,11 +16,6 @@ SOLUTION.md file.
 
 If you have any questions at any point, please reach us on email.
 
-## Submission
-
-Please form this repository and commit all your changes to it.
-When you're done, send us the email with your Github repository URL.
-
 ## Overview
 
 We’ve built a simple Autocomplete/Typeahead component in vanilla ES2015 that
