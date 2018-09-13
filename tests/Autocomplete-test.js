@@ -12,7 +12,7 @@ describe('Autocomplete', () => {
   });
 
   describe('States', () => {
-    it('should initalize', () => {
+    it('should initialize', () => {
       const input = document.querySelector('input');
       const results = document.querySelector('ul');
 
@@ -45,7 +45,7 @@ describe('Autocomplete', () => {
       expect(false).toBeTruthy();
     });
 
-    it('should dispaly user profile', () => {
+    it('should display user profile', () => {
       expect(false).toBeTruthy();
     })
   })
