@@ -30,7 +30,7 @@ Currently, the component can only query against a static data array. Your task i
 
 1. Enhance the component so that it also accepts an HTTP endpoint as a data source.
 
-   For example, if you wire up the component to use `https://api.github.com/search/users?q={query}&per_page={numOfResults}` and type `foo` in the input, the component dropdown should show Github users with logins that start with `foo`. When you select a user from the results, `item` in the `onSelect(item)` callback should be the selected Github user's id.
+   For example, if you wire up the component to use  and type `foo` in the input, the component dr`https://api.github.com/search/users?q={query}&per_page={numOfResults}`opdown should show Github users with logins that start with `foo`. When you select a user from the results, `item` in the `onSelect(item)` callback should be the selected Github user's id.
 
 2. Implement keyboard shortcuts to navigate the results dropdown using up/down arrow keys and to select a result using the Enter key.
 
