@@ -21,6 +21,7 @@ new Autocomplete(document.getElementById('gh-user'), {
   url: 'https://api.github.com/search/users',
   querySymbol: 'q=',
   queryEndParams: '+in:login', //specific to GitHub's API - search just login property
+  perPageKey: '&per_page=',
   onInputChange: async (initialData) => {
     let userLogins = initialData.items.map(user => { 
       return ({
@@ -31,36 +32,41 @@ new Autocomplete(document.getElementById('gh-user'), {
     return userLogins;
   },
   onSelect: (ghUserId) => {
-    console.log('selected github user id:', ghUserId);
+    console.log('selected github user id:', ghUserId.innerHTML);
+    
   },
 });
 
 //Breweries
 new Autocomplete(document.getElementById('brewery'), {
-  url: 'https://api.openbrewerydb.org/breweries/search',
+  url: 'https://api.openbrewerydb.org/breweries/autocomplete',
   querySymbol: 'query=',
+  perPageKey: '&per_page=',
   onInputChange: async (initialData) => {
-    let breweries = initialData.map(brew => ({ text: brew.name}));   
-    return breweries;
+    return initialData.map(brew => ({ text: brew.name}));   
   },
   onSelect: (brewery) => {
     console.log('selected brewery name: ', brewery);
   },
 });
 
-// //Composers
-// new Autocomplete(document.getElementById('brewery'), {
-//   url: 'http://api.openopus.org/composer/list/search',
-//   querySymbol: '',
-//   queryEndParams: '.json',
-//   onInputChange: async (initialData) => {
-//     let breweries = initialData.map(brew => ({ text: brew.name}));   
-//     return breweries;
-//   },
-//   onSelect: (brewery) => {
-//     console.log('selected brewery name: ', brewery);
-//   },
-// });
+//NASA images
+//there is not a clear way to specify the number of results per page
+new Autocomplete(document.getElementById('nasa'), {
+  url: 'https://images-api.nasa.gov/search',
+  querySymbol: 'title=',
+  queryEndParams: '&media_type=image',
+  onInputChange: async (initialData) => {
+    let nasaImgs = initialData.collection.items.map(image => {
+      return ({ 
+        text: image.data[0].title,
+        img: image.links[0].href
+      })
+    });
+    return nasaImgs;
+  },
+  onSelect: async (nasaImg) => {
+    console.log('selected image title: ', nasaImg);
+  },
+});
 
-
-// https://itunes.apple.com/search?

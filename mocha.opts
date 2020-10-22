@@ -1,3 +1,4 @@
 --require jsdom-global/register
 --webpack-config webpack.config.js
+--require init.js
 tests/**/*-test.js

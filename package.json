@@ -27,6 +27,7 @@
     "babel-polyfill": "^6.26.0",
     "css-loader": "^0.28.4",
     "html-loader": "^0.5.5",
+    "isomorphic-fetch": "^3.0.0",
     "regenerator-runtime": "^0.13.7",
     "style-loader": "^0.18.2"
   }
