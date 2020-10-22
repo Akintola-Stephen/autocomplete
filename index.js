@@ -32,7 +32,7 @@ new Autocomplete(document.getElementById('gh-user'), {
     return userLogins;
   },
   onSelect: (ghUserId) => {
-    console.log('selected github user id:', ghUserId.innerHTML);
+    console.log('selected github user id:', ghUserId.textContent);
     
   },
 });
@@ -46,7 +46,7 @@ new Autocomplete(document.getElementById('brewery'), {
     return initialData.map(brew => ({ text: brew.name}));   
   },
   onSelect: (brewery) => {
-    console.log('selected brewery name: ', brewery);
+    console.log('selected brewery name: ', brewery.textContent);
   },
 });
 
@@ -66,7 +66,7 @@ new Autocomplete(document.getElementById('nasa'), {
     return nasaImgs;
   },
   onSelect: async (nasaImg) => {
-    console.log('selected image title: ', nasaImg);
+    console.log('selected image title: ', nasaImg.textContent);
   },
 });
 

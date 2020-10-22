@@ -209,8 +209,8 @@ class Autocomplete {
         break;
         case 'ArrowUp':
           //decrement listIndex or send to the end of the list
-          this.listIndex = this.listIndex < 0 ? length - 1 : this.listIndex - 1;
-          
+          this.listIndex = this.listIndex === -1 ? length - 1 : this.listIndex - 1;
+          if(this.listIndex < 0) this.listIndex = length -1;
           if(this.listIndex > -1 && this.listIndex < length) {
             //add class 'active' to node at the current index in nodeList
             nodeList[this.listIndex].classList.add('active');

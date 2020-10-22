@@ -28,8 +28,6 @@ describe('Autocomplete', () => {
     before(() => {
       document.body.innerHTML = html;
       wrapper = new Autocomplete(document.getElementById('state'), { data: testData });
-      //simulate input
-      inputSim('mic');
     });
 
     it('should initialize', () => {
@@ -39,13 +37,15 @@ describe('Autocomplete', () => {
       expect(input).toBeTruthy();
       expect(input.type).toEqual('search');
       expect(input.name).toEqual('query');
-      expect(results.className).toEqual('results');
+      expect(results.className).toContain('results');
     });
 
     it('should handle keyboard input with arrow and enter keys', () => {
+      //simulate input
+      inputSim('mic');
+
       //test arrow keys 
       //after a user presses the down or up arrow, the listIndex property should increment or decrement, respectively
-
       const keysArr = ['ArrowDown', 'ArrowUp'];
       let arrowEvent;
       keysArr.forEach(key => {
