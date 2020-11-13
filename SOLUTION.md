@@ -24,16 +24,14 @@
 # What can be better?
 1. Styling:
     I was hoping to have some time to make the page look nicer but I forwent it for time to learn about testing. The only thing I did was fixed the hanging border on empty results elements!
-2. Optimizing keyboard and click event responses:
-    It seems like it would be tidier to create the same criteria for hover/click as for arrow/enter, using "active" class names, but I decided it wasn't necessary in this case to change the click behavior since it was working properly and a change might create unnecessary work for the program. Also, enabling arrow selections to trigger scrolling would make the UI better.
-3. Chrome and autocomplete:
+2. Chrome and autocomplete:
     I ran into an issue where even though autocomplete was set to off on initialization, Chrome still shows some of its own autocomplete on top of mine in my states instance. I could not find a solution for this. 
-4. API calls:
+3. API calls:
     In the NASA API, titles are of collections, so there are several of the same title that sometimes pop up in the search bar. This is not ideal UI!
     This program only works for open APIs that don't require keys. It would be a nice feature to include some code that allowed for API keys.
-5. Tests:
-    As I said, this was my first time doing unit tests, so they are not amazing. I ran into trouble when Mocha was timing out (or so I thought) when fetch was being called. I made a hacky test, but I would love to learn ways to optimize it. I tried changing the timeout which did not work, as well as many versions of asynchronous testing, but this was confusing to me when calling methods inside a class component.
+4. Tests:
+    This was my first time doing unit tests, so they are not amazing. I ran into trouble when Mocha was timing out (or so I thought) when fetch was being called. I made a hacky test, but I would love to learn ways to optimize it. I tried changing the timeout which did not work, as well as many versions of asynchronous testing, but this was confusing to me when calling methods inside a class component.
 
 # Summary
 
-I spent quite a bit of time on this project, most of which was learning about testing. It provided an oppotunity for me to expand my skillset! There was some discrepency/ambiguity between the README instructions and the testing expectations. After being told they were open to interpretation I made the best decisions I could based on a combination of decent UI and time management. Thanks so much for your consideration.
+I spent quite a bit of time on this project, most of which was learning about testing. It provided an oppotunity for me to expand my skillset! 

@@ -1,17 +1,5 @@
 # Software Engineer UI Code Challenge
 
-## Overview
-
-This code test is for all levels.
-
-Please plan to spend no more than 4 hours on this. We understand we may not be the only company asking for an exercise from you and want to be respectful of your time, though you can spend longer perfecting your solution if you want to. We recommend you focus on the core requirements first, then work on any additional features if you have the time. By 4 hours in, please feel free to stop working and explain what refactors / code organization / enhancements you would have made with more time in the `SOLUTION.md` file.
-
-If you have any questions at any point, please reach out to us over email.
-
-## Submission
-
-Please submit a zipped copy or [git bundle](https://git-scm.com/docs/git-bundle) of your code (excluding the `node_modules` folder) according to the instructions provided with this challenge.  If you have problems making a submission, please reach out to your talent coordinator for support.
-
 ## Challenge Description
 
 We’ve included a simple Autocomplete/Typeahead component in vanilla ES2015 that lets you type in a query in a dropdown in order to see a list of matching results.

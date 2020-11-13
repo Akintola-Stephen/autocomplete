@@ -1,7 +1,7 @@
 {
   "name": "swe-ui-code-test",
   "version": "1.0.0",
-  "description": "Flashpoint SWE Code Test",
+  "description": "SWE Code Test",
   "private": true,
   "main": "./index.js",
   "scripts": {

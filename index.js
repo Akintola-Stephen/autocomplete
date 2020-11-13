@@ -22,7 +22,7 @@ new Autocomplete(document.getElementById('gh-user'), {
   querySymbol: 'q=',
   queryEndParams: '+in:login', //specific to GitHub's API - search just login property
   perPageKey: '&per_page=',
-  onInputChange: async (initialData) => {
+  onInputChange: (initialData) => {
     let userLogins = initialData.items.map(user => { 
       return ({
         text: user.login, 
@@ -42,7 +42,7 @@ new Autocomplete(document.getElementById('brewery'), {
   url: 'https://api.openbrewerydb.org/breweries/autocomplete',
   querySymbol: 'query=',
   perPageKey: '&per_page=',
-  onInputChange: async (initialData) => {
+  onInputChange: (initialData) => {
     return initialData.map(brew => ({ text: brew.name}));   
   },
   onSelect: (brewery) => {
@@ -56,7 +56,7 @@ new Autocomplete(document.getElementById('nasa'), {
   url: 'https://images-api.nasa.gov/search',
   querySymbol: 'title=',
   queryEndParams: '&media_type=image',
-  onInputChange: async (initialData) => {
+  onInputChange: (initialData) => {
     let nasaImgs = initialData.collection.items.map(image => {
       return ({ 
         text: image.data[0].title,
@@ -65,7 +65,7 @@ new Autocomplete(document.getElementById('nasa'), {
     });
     return nasaImgs;
   },
-  onSelect: async (nasaImg) => {
+  onSelect: (nasaImg) => {
     console.log('selected image title: ', nasaImg.textContent);
   },
 });

@@ -23,14 +23,16 @@ class Autocomplete {
     //clear info when searching another input box
     this.inputEl.addEventListener('blur', () => {
       this.inputEl.value = '';
-      document.getElementById('select-text').innerHTML = '';
-      let selectImg = document.getElementById('select-img');
-      selectImg.src = '';
-      selectImg.alt = '';
+      // document.getElementById('select-text').innerHTML = '';
+      // let selectImg = document.getElementById('select-img');
+      // selectImg.src = '';
+      // selectImg.alt = '';
     });
 
     //add event listener for arrow keys to the root element
     this.rootEl.addEventListener('keydown', this.onKeyboardEvent);
+    //Event listener callback moved to onSelectElement to accomodate both click and Enter events
+    this.rootEl.addEventListener('click', this.onSelectElement);
 
     //variable updates based on the current input field - used for testing only
     this.currentQuery = '';
@@ -41,7 +43,7 @@ class Autocomplete {
     Object.assign(inputEl, {
       type: 'search',
       name: 'query',
-      autocomplete: 'off',
+      autocomplete: 'off'
     });
 
     inputEl.addEventListener('input', event => {
@@ -81,8 +83,6 @@ class Autocomplete {
         otherValue: result.value
       });
 
-      //Event listener callback moved to onSelectElement to accomodate both click and Enter events
-      el.addEventListener('click', this.onSelectElement);
       fragment.appendChild(el);
     });
 
@@ -113,9 +113,10 @@ class Autocomplete {
         //create the endpoint with the parameters given and call the API
         let compoundQuery = queryEndParams ? query + queryEndParams : query; 
         let perPage = perPageKey ? perPageKey + this.numOfResults : '';
-        const initialData = await this.getAPIData(`${url}?${querySymbol}${compoundQuery}${perPage}`).catch(err => new Error(err));
+        const initialData = await this.getAPIData(`${url}?${querySymbol}${compoundQuery}${perPage}`);
         //update this.data with API-specific code in this.options.onInputChange
-        this.data = initialData ? await onInputChange(initialData).catch(err => new Error(err)) : [];
+        //console.log('called api!');
+        this.data = onInputChange(initialData);
         parseResults();  
       })();
     } else {
@@ -154,6 +155,11 @@ class Autocomplete {
   //runs for every Enter or click on a list element
   onSelectElement = (event) => {
     const { onSelect } = this.options;
+
+    document.getElementById('select-text').innerHTML = '';
+    let selectImg = document.getElementById('select-img');
+    selectImg.src = '';
+    selectImg.alt = '';
 
     let eventNode;
     if(event.type === 'click') {
