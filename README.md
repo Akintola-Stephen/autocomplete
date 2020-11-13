@@ -1,3 +1,5 @@
+This challenge was completed as part of a job interview. Requirements are below as well as instructions for installing. Solutions and continued issues are in SOLUTIONS.md.
+
 # Software Engineer UI Code Challenge
 
 ## Challenge Description
